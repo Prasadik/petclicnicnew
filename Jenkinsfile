@@ -3,8 +3,8 @@ pipeline {
     parameters {
       string(name:'cmd1',description:'give build the command',defaultValue:'clean')
       string(name:'cmd2',description:'give build the command',defaultValue:'install')
-      string(name:'cmd3',description:'give build the command',defaultValue:'spring-boot')
-      string(name:'cmd4',description:'give build the command',defaultValue:'run')
+      //string(name:'cmd3',description:'give build the command',defaultValue:'spring-boot')
+      //string(name:'cmd4',description:'give build the command',defaultValue:'run')
        // choice(choices:['package','compile','install'],name:'cmd2')
                 }
     stages {
@@ -22,7 +22,7 @@ pipeline {
             }
         stage('deploy') {
         steps {
-          sh "mvn $cmd3:$cmd4"
+          sh "mvn spring-boot:run"
               }      
             }
           }
