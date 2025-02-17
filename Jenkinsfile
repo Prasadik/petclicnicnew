@@ -12,11 +12,17 @@ pipeline {
         steps {
           sh "rm -rf petclicnicnew"
           sh "git clone https://github.com/Prasadik/petclicnicnew.git"
+          sh "cd petclicnicnew"
               }      
             }
+      stage('Set up Environment') {
+            steps {
+                sh 'export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))'
+                sh 'export MAVEN_HOME=/usr/share/maven'
+            }
+        }
         stage('build') {
         steps {
-          sh "cd petclicnicnew"
           sh "mvn $cmd1 $cmd2"
               }      
             }
