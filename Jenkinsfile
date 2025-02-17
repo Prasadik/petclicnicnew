@@ -12,7 +12,7 @@ pipeline {
         steps {
           sh "rm -rf petclicnicnew"
           sh "git clone https://github.com/Prasadik/petclicnicnew.git"
-          sh "cd clinic"
+          sh cd petclicnicnew
               }      
             }
       stage('Set up Environment') {
@@ -23,7 +23,6 @@ pipeline {
         }
         stage('build') {
         steps {
-          sh "cd petclicnicnew"
           sh "mvn $cmd1 $cmd2"
               }      
             }
