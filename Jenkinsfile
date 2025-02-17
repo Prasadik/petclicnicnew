@@ -1,5 +1,5 @@
 pipeline {
-  agent {label 'slave1'}
+  agent {label 'slave2'}
     parameters {
       string(name:'cmd1',description:'give build the command',defaultValue:'clean')
       string(name:'cmd2',description:'give build the command',defaultValue:'install')
