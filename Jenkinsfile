@@ -15,12 +15,12 @@ pipeline {
           sh "cd petclicnicnew"
               }      
             }
-      stage('Set up Environment') {
+   /*   stage('Set up Environment') {
             steps {
                 sh 'export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))'
                 sh 'export MAVEN_HOME=/usr/share/maven'
             }
-        }
+        }*/
         stage('build') {
         steps {
           sh "mvn $cmd1 $cmd2"
